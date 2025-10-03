@@ -12,10 +12,10 @@ st.title("Welcome to the English Tense Tutor Chatbot!")
 # Initialize chat history in session state
 if "messages" not in st.session_state:
     st.session_state.messages = []
+    st.session_state.messages.append({"role": "user", "content": "I want to learn English tenses."})
 
 if "chain_memory" not in st.session_state:
     st.session_state.chain_memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-
 
 # Display chat messages from history
 for message in st.session_state.messages:
